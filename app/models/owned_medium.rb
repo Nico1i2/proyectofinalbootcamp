@@ -1,0 +1,2 @@
+class OwnedMedium < ApplicationRecord
+end

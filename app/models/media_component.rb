@@ -1,0 +1,2 @@
+class MediaComponent < ApplicationRecord
+end
