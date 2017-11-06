@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :briefs
+  resources :products
+  resources :brands
+  resources :client_product_lines
+  resources :product_lines
+  resources :clients
   get 'home/index'
 
   devise_for :models

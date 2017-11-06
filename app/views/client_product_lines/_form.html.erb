@@ -1,0 +1,27 @@
+<%= form_with(model: client_product_line, local: true) do |form| %>
+  <% if client_product_line.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(client_product_line.errors.count, "error") %> prohibited this client_product_line from being saved:</h2>
+
+      <ul>
+      <% client_product_line.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :client_id %>
+    <%= form.text_field :client_id, id: :client_product_line_client_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_line_id %>
+    <%= form.text_field :product_line_id, id: :client_product_line_product_line_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

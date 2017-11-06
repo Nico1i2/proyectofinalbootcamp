@@ -10,29 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171026024418) do
+ActiveRecord::Schema.define(version: 20171103023245) do
 
   create_table "brands", force: :cascade do |t|
-    t.string "brand_name"
-    t.string "brand_description"
-    t.string "brand_id"
+    t.string "name"
+    t.text "description"
+    t.string "brand_ID"
+    t.string "facebook_url"
+    t.string "instagram_url"
+    t.string "twitter_url"
+    t.string "web_page_url"
+    t.integer "product_line_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_line_id"], name: "index_brands_on_product_line_id"
   end
 
   create_table "briefs", force: :cascade do |t|
     t.string "age"
-    t.string "location"
+    t.text "location"
     t.string "social_class"
     t.integer "budget"
+    t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_briefs_on_product_id"
+  end
+
+  create_table "client_product_lines", force: :cascade do |t|
+    t.integer "client_id"
+    t.integer "product_line_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_client_product_lines_on_client_id"
+    t.index ["product_line_id"], name: "index_client_product_lines_on_product_line_id"
   end
 
   create_table "clients", force: :cascade do |t|
-    t.string "client_name"
-    t.string "client_description"
-    t.string "client_id"
+    t.string "name"
+    t.text "description"
+    t.string "client_ID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -77,19 +94,21 @@ ActiveRecord::Schema.define(version: 20171026024418) do
   end
 
   create_table "product_lines", force: :cascade do |t|
-    t.string "product_line_name"
-    t.string "product_line_description"
-    t.string "product_line_id"
+    t.string "name"
+    t.text "description"
+    t.string "product_line_ID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "product_name"
-    t.string "product_description"
-    t.string "product_id"
+    t.string "name"
+    t.text "description"
+    t.string "product_ID"
+    t.integer "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_products_on_brand_id"
   end
 
 end

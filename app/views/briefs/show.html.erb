@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @brief.age %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @brief.location %>
+</p>
+
+<p>
+  <strong>Social class:</strong>
+  <%= @brief.social_class %>
+</p>
+
+<p>
+  <strong>Budget:</strong>
+  <%= @brief.budget %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @brief.product %>
+</p>
+
+<%= link_to 'Edit', edit_brief_path(@brief) %> |
+<%= link_to 'Back', briefs_path %>

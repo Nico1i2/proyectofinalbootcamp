@@ -1,0 +1,59 @@
+<%= form_with(model: brand, local: true) do |form| %>
+  <% if brand.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(brand.errors.count, "error") %> prohibited this brand from being saved:</h2>
+
+      <ul>
+      <% brand.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :product_line_id %>
+    <%= form.select :product_line, options_from_collection_for_select(@product_line, "id", "name")%>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :brand_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :brand_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :brand_ID %>
+    <%= form.text_field :brand_ID, id: :brand_brand_ID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :facebook_url %>
+    <%= form.text_field :facebook_url, id: :facebook_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :instagram_url %>
+    <%= form.text_field :instagram_url, id: :instagram_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :twitter_url %>
+    <%= form.text_field :twitter_url, id: :twitter_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :web_page_url %>
+    <%= form.text_field :web_page_url, id: :web_page_url %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

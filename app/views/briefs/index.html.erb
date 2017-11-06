@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Briefs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Age</th>
+      <th>Location</th>
+      <th>Social class</th>
+      <th>Budget</th>
+      <th>Product</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @briefs.each do |brief| %>
+      <tr>
+        <td><%= brief.age %></td>
+        <td><%= brief.location %></td>
+        <td><%= brief.social_class %></td>
+        <td><%= brief.budget %></td>
+        <td><%= brief.product %></td>
+        <td><%= link_to 'Show', brief %></td>
+        <td><%= link_to 'Edit', edit_brief_path(brief) %></td>
+        <td><%= link_to 'Destroy', brief, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Brief', new_brief_path %>
