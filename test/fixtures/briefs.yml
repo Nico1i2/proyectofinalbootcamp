@@ -2,14 +2,12 @@
 
 one:
   age: MyString
-  location: MyText
+  location: MyString
   social_class: MyString
   budget: 1
-  product: one
 
 two:
   age: MyString
-  location: MyText
+  location: MyString
   social_class: MyString
   budget: 1
-  product: two

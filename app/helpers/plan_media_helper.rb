@@ -1,0 +1,2 @@
+module PlanMediaHelper
+end

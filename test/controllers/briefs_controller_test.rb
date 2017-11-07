@@ -17,7 +17,7 @@ class BriefsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create brief" do
     assert_difference('Brief.count') do
-      post briefs_url, params: { brief: { age: @brief.age, budget: @brief.budget, location: @brief.location, product_id: @brief.product_id, social_class: @brief.social_class } }
+      post briefs_url, params: { brief: { age: @brief.age, budget: @brief.budget, location: @brief.location, social_class: @brief.social_class } }
     end
 
     assert_redirected_to brief_url(Brief.last)
@@ -34,7 +34,7 @@ class BriefsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update brief" do
-    patch brief_url(@brief), params: { brief: { age: @brief.age, budget: @brief.budget, location: @brief.location, product_id: @brief.product_id, social_class: @brief.social_class } }
+    patch brief_url(@brief), params: { brief: { age: @brief.age, budget: @brief.budget, location: @brief.location, social_class: @brief.social_class } }
     assert_redirected_to brief_url(@brief)
   end
 

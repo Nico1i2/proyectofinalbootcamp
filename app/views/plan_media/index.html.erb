@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Plan Media</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plan_media.each do |plan_medium| %>
+      <tr>
+        <td><%= plan_medium.description %></td>
+        <td><%= link_to 'Show', plan_medium %></td>
+        <td><%= link_to 'Edit', edit_plan_medium_path(plan_medium) %></td>
+        <td><%= link_to 'Destroy', plan_medium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Plan Medium', new_plan_medium_path %><br>
+<%= link_to 'Menú principal', home_index_path %>

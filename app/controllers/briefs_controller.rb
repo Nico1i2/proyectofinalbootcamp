@@ -15,26 +15,27 @@ class BriefsController < ApplicationController
   # GET /briefs/new
   def new
     @brief = Brief.new
+    @brand = Brand.all
   end
 
   # GET /briefs/1/edit
   def edit
+    @brand = Brand.all
   end
 
   # POST /briefs
   # POST /briefs.json
   def create
     @brief = Brief.new(brief_params)
+    @brief.brand = Brand.find(params[:brief][:brand])
+    @brief.save
 
-    respond_to do |format|
       if @brief.save
-        format.html { redirect_to @brief, notice: 'Brief was successfully created.' }
-        format.json { render :show, status: :created, location: @brief }
+        redirect_to @brief, notice: 'Brief was successfully created.'
       else
-        format.html { render :new }
-        format.json { render json: @brief.errors, status: :unprocessable_entity }
+        @brand = Brief.all
+        render :new
       end
-    end
   end
 
   # PATCH/PUT /briefs/1
@@ -69,6 +70,6 @@ class BriefsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def brief_params
-      params.require(:brief).permit(:age, :location, :social_class, :budget, :product_id)
+      params.require(:brief).permit(:age, :location, :social_class, :budget, :brief_ID)
     end
 end

@@ -12,13 +12,18 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :brand_id %>
+    <%= form.select :brand, options_from_collection_for_select(@brand, "id", "name")%>
+  </div>
+
+  <div class="field">
     <%= form.label :age %>
     <%= form.text_field :age, id: :brief_age %>
   </div>
 
   <div class="field">
     <%= form.label :location %>
-    <%= form.text_area :location, id: :brief_location %>
+    <%= form.text_field :location, id: :brief_location %>
   </div>
 
   <div class="field">
@@ -29,11 +34,6 @@
   <div class="field">
     <%= form.label :budget %>
     <%= form.number_field :budget, id: :brief_budget %>
-  </div>
-
-  <div class="field">
-    <%= form.label :product_id %>
-    <%= form.text_field :product_id, id: :brief_product_id %>
   </div>
 
   <div class="actions">

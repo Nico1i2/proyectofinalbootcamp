@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :brand_id %>
+    <%= form.select :brand, options_from_collection_for_select(@brand, "id", "name")%>
+  </div>
+
+  <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, id: :product_name %>
   </div>
@@ -24,11 +29,6 @@
   <div class="field">
     <%= form.label :product_ID %>
     <%= form.text_field :product_ID, id: :product_product_ID %>
-  </div>
-
-  <div class="field">
-    <%= form.label :brand_id %>
-    <%= form.select :brand, options_from_collection_for_select(@brand, "id", "name")%>
   </div>
 
 
