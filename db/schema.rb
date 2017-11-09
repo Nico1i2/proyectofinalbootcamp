@@ -31,8 +31,10 @@ ActiveRecord::Schema.define(version: 20171106234421) do
     t.string "location"
     t.string "social_class"
     t.integer "budget"
+    t.integer "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_briefs_on_brand_id"
   end
 
   create_table "client_product_lines", force: :cascade do |t|

@@ -2,13 +2,38 @@
 <html>
   <head>
     <title>MediaPlan</title>
+    <%= stylesheet_link_tag    'application', media: 'all'%>
+    <%= javascript_include_tag 'application'%>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </a>
+        <div class="nav-collapse collapse">
+          <ul class="nav foo" id="menu">
+          <li class="active">
+            <a href="/">Home</a>
+            <a href="/clients">Clientes</a>
+            <a href="/product_lines">Lineas de Producto</a>
+            <a href="/brands">Marcas</a>
+            <a href="/products">Productos</a>
+            <a href="/briefs">Briefs</a>
+            <a href="/plan_media">Plan Media</a>
+        <div class="row">
+          <div class="span9"></div>
+          <div class="span3">
+          <h2>About Media Plan</h2>
+          <p> Media plan es la herramienta para la planeación de campañas digitales de publicitarias </P>
+        </div>
+      </div>
+    </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
